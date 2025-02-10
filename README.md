@@ -16,13 +16,16 @@
 
 ### Environment (Tested)
 - Linux
+- Python 3.8
+- PyTorch >= 1.10
+- CUDA >= 11.4
 
 
 ### Dependencies
 
 Install PyTorch and other dependencies:
 ```
-conda create --name cadtrans_env -y
+conda create --name cadtrans_env  python=3.8 -y
 conda activate cadtrans_env
 
 pip install -r requirements.txt
