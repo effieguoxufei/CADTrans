@@ -2,15 +2,13 @@
 
 [![webpage](https://img.shields.io/badge/🌐-Website%20-blue.svg)](https://effieguoxufei.github.io/CADtrans/) 
 
-*[Xufei Guo](), [Xiao Don](),
+*[Xufei Guo](), [Xiao Dong](),
 [Juan Cao](/), [Zhonggui Chen]()*
 
 ![cadtrans](resources/figure0.png)
 
 > We propose a novel CAD model generation network called CADTrans which is based on a code tree-guided transformer framework to autoregressively generate CAD construction sequences. 
             Firstly, three regularized discrete codebooks are extracted through vector quantized adversarial learning, with each codebook respectively representing  the features of Loop, Profile, and Solid. Secondly, these codebooks  are used to normalize a CAD construction sequence into a structured code tree representation  which is then used to  train a standard transformer network to reconstruct the code tree. Finally, the code tree is used as global information to guide the sketch-and-extrude method to recover the corresponding geometric information, thereby reconstructing the complete CAD model.
-            Extensive experiments demonstrate that CADTrans achieves state-of-the-art performance, generating higher-quality, more varied, and complex models. Meanwhile, it provides more possibilities for CAD applications through its flexible control method, which improves design efficiency and promotes creativity.
-
 
 ## Requirements
 
