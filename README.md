@@ -14,11 +14,12 @@
 
 ## Requirements
 
-### Environment (Tested)
+### Environment & Dependencies
 - Linux
 - Python 3.8
 - PyTorch >= 1.10
 - CUDA >= 11.4
+- Install pythonocc following the instruction [here](https://github.com/tpaviot/pythonocc-core) (use mamba if conda is too slow).
 
 
 ### Dependencies
