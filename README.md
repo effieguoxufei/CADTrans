@@ -39,29 +39,49 @@ Download our [raw data](https://huggingface.co/datasets/rainforeast/CADTrans/res
 The raw data need to be first converted to CADTrans format following the steps from [SkexGen](https://github.com/samxuxiang/SkexGen). You can also run the following script to process the data:
 
 ```
-sh scripts/data_process.sh
+sh Scripts/data_process.sh
 ```
 
-Alternatively, you can download the already [pre-processed data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/model.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/loop.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/solid.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/profile.rar?download=true)🤗
+Alternatively, you can download the already pre-processed DATA 🤗:
+- [model data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/model.rar?download=true)
+- [loop data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/loop.rar?download=true)
+- [profile data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/profile.rar?download=true)
+- [solid data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/solid.rar?download=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Training 🏃‍♂️
 ### Regularized Discrete Codebooks 📚
 Train and extract the regularized solid codebooks with:
 
 ```
-sh scripts/solid_codebook.sh
+sh Scripts/solid_codebook.sh
 ```
 
 Train and extract the regularized profile codebooks with:
 
 ```
-sh scripts/profile_codebook.sh
+sh Scripts/profile_codebook.sh
 ```
 
 Train and extract the regularized loop codebooks with:
 
 ```
-sh scripts/loop_codebook.sh
+sh Scripts/loop_codebook.sh
 ```
 
 Download our pretrained checkpoint and extract codes as follows:
@@ -76,7 +96,7 @@ Download our pretrained checkpoint and extract codes as follows:
 Train code tree with:
 
 ```
-sh scripts/train_codetree.sh
+sh Scripts/train_codetree.sh
 ```
 
 Download our pretrained checkpoint [code_tree.pt](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/proj_log/code_tree.rar?download=true).🤗
@@ -85,7 +105,7 @@ Download our pretrained checkpoint [code_tree.pt](https://huggingface.co/dataset
 Train CAD Construction Sequence Generation with:
 
 ```
-sh scripts/train_cad.sh
+sh Scripts/train_cad.sh
 ```
 
 Download our pretrained checkpoint [cad_gen.pt](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/proj_log/cad_gen.rar?download=true).🤗
@@ -95,14 +115,14 @@ Download our pretrained checkpoint [cad_gen.pt](https://huggingface.co/datasets/
 Run this script to generate CAD samples and visualize the results:
 
 ```
-sh scripts/sample.sh
+sh Scripts/sample.sh
 ```
 
 ### Evaluation
 Please download the [test data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/testset.rar?download=true) inside the `data` folder. Run this script to evaluate CAD samples (Warning: This step can be very slow):
 
 ```
-sh scripts/eval.sh
+sh Scripts/eval.sh
 ```
 
 
