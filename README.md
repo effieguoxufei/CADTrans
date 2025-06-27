@@ -2,8 +2,8 @@
 
 [![webpage](https://img.shields.io/badge/🌐-Website%20-blue.svg)](https://effieguoxufei.github.io/CADtrans/) 
 
-*[Xufei Guo](), [Xiao Dong](),
-[Juan Cao](/), [Zhonggui Chen]()*
+Xufei Guo, Xiao Dong,
+Juan Cao, Zhonggui Chen
 
 ![cadtrans](resources/figure0.png)
 
@@ -34,49 +34,61 @@ pip install -r requirements.txt
 ```
 
 ## Data 🗂️
-Download our [raw data](https://pan.baidu.com/s/1IUrQllXIeKhV9XmOpS4RYg?pwd=mpb2)(code: mpb2), processed from [DeepCAD](https://github.com/ChrisWu1997/DeepCAD), into the `data` folder in the root of this repository.
+Download our [raw data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/cad_raw.rar?download=true), processed from [DeepCAD](https://github.com/ChrisWu1997/DeepCAD), into the `data` folder in the root of this repository.
 
 The raw data need to be first converted to CADTrans format following the steps from [SkexGen](https://github.com/samxuxiang/SkexGen). You can also run the following script to process the data:
 
 ```
-sh scripts/process.sh
+sh scripts/data_process.sh
 ```
 
-Alternatively, you can download the already [pre-processed data](https://pan.baidu.com/s/18313rlcyFcoviYGE2EWpOw)(code: 9s23)🤗
+Alternatively, you can download the already [pre-processed data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/model.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/loop.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/solid.rar?download=true,https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/profile.rar?download=true)🤗
 
 ## Training 🏃‍♂️
 ### Regularized Discrete Codebooks 📚
-Train and extract the regularized codebooks with:
+Train and extract the regularized solid codebooks with:
 
 ```
-sh scripts/reg-codebook.sh
+sh scripts/solid_codebook.sh
+```
+
+Train and extract the regularized profile codebooks with:
+
+```
+sh scripts/profile_codebook.sh
+```
+
+Train and extract the regularized loop codebooks with:
+
+```
+sh scripts/loop_codebook.sh
 ```
 
 Download our pretrained checkpoint and extract codes as follows:
 
 | Name     | Checkpoint | Codebook |
 |----------|------------|----------|
-| Solid    | [solid.pkl]()        | [codebook]()       |
-| Profile  | [profile.pkl]()         | [codebook]()       |
-| Loop     | [loop.pkl]()         | [codebook]()       |
+| Solid    | [solid.pt](https://huggingface.co/datasets/rainforeast/CADTrans/tree/main/proj_log/solid)        | [solid.pkl](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/solid.pkl?download=true)       |
+| Profile  | [profile.pt](https://huggingface.co/datasets/rainforeast/CADTrans/tree/main/proj_log/profile)         | [profile.pkl](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/profile.pkl?download=true)       |
+| Loop     | [loop.pt](https://huggingface.co/datasets/rainforeast/CADTrans/tree/main/proj_log/loop)         | [loop.pkl](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/loop.pkl?download=true)       |
 
 ### Code Tree Generation 🌳
 Train code tree with:
 
 ```
-sh scripts/code-tree.sh
+sh scripts/train_codetree.sh
 ```
 
-Download our pretrained checkpoint [code_tree.pkl]().🤗
+Download our pretrained checkpoint [code_tree.pt](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/proj_log/code_tree.rar?download=true).🤗
 
 ### CAD Generation 🛠️
 Train CAD Construction Sequence Generation with:
 
 ```
-sh scripts/cad-gen.sh
+sh scripts/train_cad.sh
 ```
 
-Download our pretrained checkpoint [cad_gen.pkl]().🤗
+Download our pretrained checkpoint [cad_gen.pt](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/proj_log/cad_gen.rar?download=true).🤗
 
 ## Generation and Evaluation 🎨
 ### Generation
@@ -87,7 +99,7 @@ sh scripts/sample.sh
 ```
 
 ### Evaluation
-Please download the [test data]() inside the `data` folder. Run this script to evaluate CAD samples (Warning: This step can be very slow):
+Please download the [test data](https://huggingface.co/datasets/rainforeast/CADTrans/resolve/main/testset.rar?download=true) inside the `data` folder. Run this script to evaluate CAD samples (Warning: This step can be very slow):
 
 ```
 sh scripts/eval.sh

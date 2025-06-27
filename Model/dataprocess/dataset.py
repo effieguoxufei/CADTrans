@@ -16,7 +16,7 @@ class Loader():
 
     def load_all_obj(self):
         print(f"Processing {self.format} data...")
-        with open('data_process/train_val_test_split.json') as f:
+        with open('dataprocess/train_val_test_split.json') as f:
             data_split = json.load(f)
        
         project_folders = []
